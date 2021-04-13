@@ -1,10 +1,12 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[appMakered]'
 })
 export class MakeredDirective {
 
-  constructor() { }
+  constructor(private eleRef: ElementRef) {
+    this.eleRef.nativeElement.style.background = "red";
+  }
 
 }
